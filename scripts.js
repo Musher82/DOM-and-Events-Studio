@@ -26,19 +26,26 @@ function init() {
       let position = 0
       rocket.style.position = 'relative'
       spaceShuttleHeight.innerHTML = 0
+  
 
     document.getElementById("up").addEventListener("click", function (event) { 
         position += 10;
-        document.getElementById("rocket").style.bottom = position + 'px'
-        spaceShuttleHeight.innerHTML = 10000
-        
+        document.getElementById("rocket").style.bottom = position + 'px';
+        let height = 0
+         function add() {
+            height += 10000
+            console.log(height)
+        };
+        add()
+        spaceShuttleHeight.innerHTML = height
+       
     });
 
     document.getElementById("down").addEventListener("click", function (event) { 
         position += 10;
         document.getElementById("rocket").style.top = position + 'px'
         spaceShuttleHeight.innerHTML = -10000
-        
+        event.stopPropagation()
     });
 
     document.getElementById("right").addEventListener("click", function (event) { 
